@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>Forms</title>
+</head>
+<body>
+<h5>Version 0.0.5</h5>
+
+<h1 align=center>T3A03-Forms-Trentyn</h1>
+
+<font color=green>This is proof that I can use forms</font>
+<br>
+
+<form>
+
+Date of Resignation:<input type=text id="myText01" value="12/24"><br>
+Which ones apply to you?:<br>
+Smart:<input type=checkbox><br>
+Fast:<input type=checkbox><br>
+Strong:<input type=checkbox><br>
+<br>
+How old are you?:<br>
+	0-18:<input type=radio name="myRad01" value="0-18"><br>
+	18-25:<input type=radio name="myRad01" value="18-25"><br>
+	25-35:<input type=radio name="myRad01" value="25-35"><br>
+	35-50:<input type=radio name="myRad01" value="35-50"><br>
+	50+:<input type=radio name="myRad01" value="50+"><br>
+<br>
+HIDDEN:<input type=hidden><br>
+File:<input type=file><br>
+reset:<input type=reset><br>
+Submit<input type=submit><br>
+Button:<input type=button value="click" onclick="{
+	document.getElementById('myArea01').value = 'Okay'
+}"><br><br>
+Text area:<br>
+<textarea id="myArea01" cols=17 rows=2> Okay </textarea><br><br>
+
+Select Box:<br>
+<select id="mySelect01" size=2>
+	<option value='myOne'>One
+	<option value='myTwo'>Two
+	<option value='myThree'>Three
+</select>
+</form>
+<font color=red>That was Forms.</font>
