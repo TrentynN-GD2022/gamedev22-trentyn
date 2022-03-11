@@ -1,0 +1,54 @@
+<script>
+
+function myExampleFunction(){
+	let myIn01 = parseInt(document.getElementById('myText01').value)
+	let mySum = myIn01
+	let myReply = myIn01 + ' + ' + myIn01 + ' = ' + mySum
+	return myReply
+
+}
+
+</script>
+
+<script>
+function toCelsius(f) {
+  return (5/9) * (f-32);
+}
+document.getElementById("demo").innerHTML = toCelsius();
+</script>
+
+<h4>Version 0.1.2</h4>
+
+<h1 align=center>T3A09-Functions-Trentyn</h1>
+
+<a href="https://www.w3schools.com">w3schools the site i use for all my JavaScript needs.</a>
+
+Functions organize code sensibly. then they are sent elseware to conduct what they are meant to. 
+Code can also get passed to the function to make it do something. (More advanced)
+
+<h4> Example code (NOT WORKING)</h4>
+<pre>
+function myGrabNumber(){
+	return parseInt(document.getElementById('myText01').value)
+}
+</pre>
+
+<h4> Example code (WORKING)</h4>
+
+<input type=text id="myText01" value="3"><br>
+
+<input type=button value="Function Example" onClick="{
+	document.getElementById('myDiv01').innerHTML = myExampleFunction()
+}">
+
+<div id="myDiv01">...</div>
+
+<br><br><br><br><br><br>
+
+<input type=text id="myText02" value="100"><br>
+
+<input type=button value="100 degrees fahrenheit to celcius" onClick="{
+	document.getElementById('demo').innerHTML = toCelsius(100)
+}">
+<br>
+<div id="demo">...</div>

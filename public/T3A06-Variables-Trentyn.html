@@ -1,0 +1,26 @@
+<h5>Version 0.0.3</h5>
+
+<h1 align=center>T3A06-Variables-Trentyn</h1>
+
+<h4>EXAMPLE (doesn't work)</h4>
+<pre>
+	let myIn01 = document.getElementById('myText01').value
+	document.getElementById('myDiv01').innerHTML = myIn01
+</pre>
+
+<h4>WORKING CODE (does work)</h4>
+
+<input id="myText01" type=text value="Yuh" >
+<input id="myText02" type=text value="Nuh" >
+
+<input type=button value="Variable onClick" onclick="{
+	let myIn01 = document.getElementById('myText01').value
+	document.getElementById('myDiv01').innerHTML = myIn01
+
+}"><br>
+
+<input type=button value="No Variable" onclick="{
+	document.getElementById('myDiv01').innerHTML = document.getElementById('myText02').value
+}">
+
+<div id="myDiv01">Yuh or Nuh</div>

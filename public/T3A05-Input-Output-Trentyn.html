@@ -1,0 +1,25 @@
+<h5>Version 0.0.3</h5>
+
+<h1 align=center>T3A05-Input-Output-Trentyn</h1>
+
+<h4>INPUT OUTPUT BASIC CODE (not used)</h4>
+<pre>
+	let myIn01 = document.getElementById('myNum01').value
+	document.getElementById('myDiv01').innerHTML = myIn01 + ' squared = ' + myIn01*myIn01
+</pre>
+
+<h4>WORKING CODE</h4>
+
+<input id="myNum01" type=number value="7" ><br>
+
+<input type=button value="Event = Square (allNum)" onclick="{
+	let myIn01 = parseFloat(document.getElementById('myNum01').value)
+	let myAnswer = myIn01 * myIn01
+	document.getElementById('myDiv01').innerHTML = 
+	  myIn01 + ' squared = ' + myAnswer
+}"><br>
+
+<div id="myDiv01">WHAT IS 7^2?</div>
+
+
+
