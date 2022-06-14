@@ -1,0 +1,128 @@
+<script>
+
+   // global variables here
+
+   let myGlobalX = 0
+   let myClock
+   let myScore = 10
+
+let mySound1 = new Audio('Yeh.m4a') 
+
+   // global functions here
+function myHitOther(my1,my2){
+   left1   = parseInt(document.getElementById(my1).style.left)
+   right1  = left1 + parseInt(document.getElementById(my1).style.width)
+   top1    = parseInt(document.getElementById(my1).style.top)   
+   bottom1 = top1   + parseInt(document.getElementById(my1).style.height)
+   left2   = parseInt(document.getElementById(my2).style.left)
+   right2  = left2 + parseInt(document.getElementById(my2).style.width)
+   top2    = parseInt(document.getElementById(my2).style.top)   
+   bottom2 = top2   + parseInt(document.getElementById(my2).style.height)
+   if ((right1  >=  left2  ) &&      	   
+       (bottom1 >=  top2   ) &&
+       (left1   <=  right2 ) &&
+       (top1    <=  bottom2) ){
+       return true
+   }
+}
+
+
+function myCheckHit(){
+   document.all.myText01.value = myScore  // show the present score
+   
+   if ( myHitOther('myImg01','myImg03') ){
+   }   
+ 
+
+
+
+   if ( myHitOther('myImg02','myImg03','myImg05','myImg06','myImg07','myImg08','myImg09','myImg11') ){
+      document.getElementById('myImg01').style.left = '20px'
+      document.all.myText01.value = 'You hit myImg02'  
+      myScore -= 1
+   }   
+ 
+   
+   if ( myHitOther('myImg01') ){
+       //alert('you lose')
+      document.getElementById('myImg01').style.left = '20px'
+      document.all.myText01.value = 'You hit myImg03'  
+      myScore -= 1
+   }   
+   
+  // you LOSE refresh the page
+   if (myScore <= 0){
+    document.all.myText01.value = 'imagine losing, could be you.'  
+    alert('you kinda suck at this')
+    location.reload()
+   }
+
+   // YOU WIN and go to next level!
+
+   if ( myHitOther('myImg03','myImg04') ){
+      document.all.myText01.value = 'That's the end!'  
+       alert('that's the end of your soccer career, you hurt your ankle while faking falling to get the other team a red card.')
+       mySound1.play()
+      document.getElementById('myImg01').style.left = '20px'
+      
+   }
+
+   // more if statements here
+
+}
+
+
+</script>
+
+<style>
+
+
+span {
+  background-color: #ffffff;
+}
+</style>
+
+
+<body id="myBody" style="background-repeat:repeat; background-size: 100%" background="Field.jpg"  onkeydown="{
+   document.all.myText01.value = event.key
+   if (event.key == 'd') {  // d = go right
+     document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + 10 + 'px'
+   }   
+   if (event.key == 's') {   // s = go down
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + 10 + 'px'
+   }  
+   if (event.key == 'a') {  // a = go left
+     document.getElementById('myImg01').style.left = parseInt(document.getElementById('myImg01').style.left) + -10 + 'px'
+   }   
+   if (event.key == 'w') {   // w = go up
+      document.getElementById('myImg01').style.top = parseInt(document.getElementById('myImg01').style.top) + -10 + 'px'
+   }  
+   
+   
+   // put more here
+  myCheckHit()     // checks for all collisions
+}">
+
+
+
+<h1 align=center><span>Level 3</span></h1>
+
+<input id="myText01" type=text value="" size=10 placeholder="Lives Left"><br>
+
+
+
+<br><br>
+
+
+
+
+<img id="myImg01" src="myImgNew.png"  style="position:absolute; width:200px; height:160px; left: 50px; top:190px; style.border;">
+<img id="myImg02" src="myDeathZone.jpg"  style="position:absolute; width:100px; height:350px; left:1500px; top:0px;">
+<img id="myImg03" src="myBall.png"  style="position:absolute; width:100px; height:90px; left:350px; top:210px; style.border;">
+<img id="myImg04" src="myGoal.png"  style="position:absolute; width:100px; height:400px; left:1500px; top:350px;">
+<img id="myImg05" src="myImgNew2.png"  style="position:absolute; width:200px; height:160px; left: 600px; top:50px; style.border;">
+<img id="myImg06" src="myImgNew2.png"  style="position:absolute; width:200px; height:160px; left: 600px; top:210px; style.border;">
+<img id="myImg08" src="myDeathZone.jpg"  style="position:absolute; width:350px; height:100px; left:1200px; top:0px;">
+<img id="myImg09" src="myDeathZone.jpg"  style="position:absolute; width:3500px; height:100px; left:0px; top:700px;">
+<img id="myImg10" src="myImgNew2.png"  style="position:absolute; width:200px; height:160px; left: 600px; top:370px; style.border;">
+<img id="myImg11" src="myImgNew2.png"  style="position:absolute; width:200px; height:160px; left: 600px; top:530px; style.border;">
