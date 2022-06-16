@@ -22,25 +22,16 @@ Nothing: <input type=text id="myText01" value="Useless at the moment"><br>
 
 
 <input type=button value="Example Object Set and Show" onClick="{
-
 	let myPerson = {
 		'firstName' : 'Jamie',
 		'lastName'  : 'Erikson',
 		'age'       : 25,
-		'eyeColor'   : 'green'
+		'eyeColor'   : 'blue'
 }
-
-	document.getElementById('myDiv01').innerHTML = '<br>myPerson Object has
-properties: '<br>'
-	document.getElementById('myDiv01').innerHTML += 'firstName: ' + 
-myPerson.firstName + '<br>'
-	document.getElementById('myDiv01').innerHTML += 'lastName: ' + 
-myPerson.lastName '<br>'
-	document.getElementById('myDiv01').innerHTML += 'age: ' + 
-myPerson.age + '<br>'
-	document.getElementById('myDiv01').innerHTML += 'eyeColor: ' + 
-myPerson.eyeColor '<br>'
-
+	document.getElementById('myDiv01').innerHTML += 'firstName: ' + myPerson.firstName + '<br>'
+	document.getElementById('myDiv01').innerHTML += 'lastName: ' + myPerson.lastName + '<br>'
+	document.getElementById('myDiv01').innerHTML += 'age: ' + myPerson.age + '<br>'
+	document.getElementById('myDiv01').innerHTML += 'eyeColor: ' + myPerson.eyeColor + '<br>'
 }">
 
 <div id="myDiv01">...</div>
