@@ -11,7 +11,7 @@ Version 0.0.1
 <h4> working code</h4>
 
 Max Array Entry: <input type=text id="myText01" value="3"><br>
-<input type=button value="onClick" onClick{
+<input type=button value="onClick" onClick="{
   let myTemp = document.getElementById('myText01').value
    let mySum = ''
    document.getElementById('myDiv01')
